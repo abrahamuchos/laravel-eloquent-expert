@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
@@ -18,4 +19,7 @@ Route::post('posts', function (Request $request) {
         'body',
     ]));
 });
+
+Route::get('create-or-update', [HomeController::class, 'index']);
+Route::get('was-changed', [HomeController::class, 'changed']);
 
