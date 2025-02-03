@@ -86,19 +86,14 @@ class HomeController extends Controller
         echo $user->wasChanged('name') ? 'Name Changed' : 'Not changed'; // Name Changed
         echo $user->wasChanged('email') ? 'Email Changed' : 'Not changed'; // Not changed
 
+    }
 
-
-//        echo $user->getOriginal('name'); // Test User
-//        echo '<hr />';
-//        echo $user->getOriginal('email'); // test@example.com
-//        echo '<hr />';
-//        echo $user->getOriginal(); // Array ( [name] => Test User [email] => test@example.com [password] => $2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi [remember_token] => [created_at] => 2023-03-13 12:00:00 [updated_at] => 2023-03-13 12:00:00 )
-//        echo '<hr />';
-//        echo $user->getOriginal('name'); // Test User
-//        echo '<hr />';
-//        echo $user->getOriginal('email'); // test@example.com
-//        echo '<hr />';
-//        echo $user->getOriginal(); // Array ( [name] => Test User [email] => test@example.com [password] => $2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi [remember_token] => [created_at] => 2023-03-13 12:00:00 [updated_at] => 2023-03-13 12:00:00 )
-
+    public function modelObserverExamples(): void
+    {
+        User::create([
+            'name' => 'Abraham Gonzalez',
+            'email' => 'agonzalez@example.com',
+            'password' => bcrypt('password'),
+        ]);
     }
 }

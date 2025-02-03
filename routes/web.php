@@ -22,4 +22,5 @@ Route::post('posts', function (Request $request) {
 
 Route::get('create-or-update', [HomeController::class, 'index']);
 Route::get('was-changed', [HomeController::class, 'changed']);
+Route::get('model-observers', [HomeController::class, 'modelObserverExamples']);
 
