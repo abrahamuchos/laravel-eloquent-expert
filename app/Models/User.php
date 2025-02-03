@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 /**
- * 
+ *
  *
  * @property int $id
  * @property string $name
@@ -33,6 +33,8 @@ use Illuminate\Notifications\Notifiable;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User wherePassword($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereUpdatedAt($value)
+ * @property int $is_admin
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereIsAdmin($value)
  * @mixin \Eloquent
  */
 class User extends Authenticatable
@@ -61,16 +63,23 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    protected $casts = [
+        'is_admin' => 'boolean',
+        'email_verified_at' => 'timestamp',
+        'password' => 'hashed',
+    ];
+
     /**
      * Get the attributes that should be cast.
      *
      * @return array<string, string>
      */
-    protected function casts(): array
-    {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
-    }
+//    protected function casts(): array
+//    {
+//        return [
+//            'is_admin' => 'boolean',
+//            'email_verified_at' => 'date:m/d/Y',
+//            'password' => 'hashed',
+//        ];
+//    }
 }

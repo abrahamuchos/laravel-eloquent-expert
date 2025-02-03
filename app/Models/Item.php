@@ -13,6 +13,12 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Item newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Item newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Item query()
+ * @property int $id
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Item whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Item whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Item whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class Item extends Model
